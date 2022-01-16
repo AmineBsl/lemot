@@ -129,7 +129,6 @@ function GameBoard() {
     }
 
 
-
     return (
         <div className="focus : outline-none" tabIndex={0} onKeyUp={handleKeyPress}>
             <div className="flex flex-col items-center w-fit">

@@ -10,7 +10,7 @@ function Letter(props: any) {
             case 'correctPlace':
                 return 'bg-green-500 border-0';
             case 'incorrectPlace':
-                return 'bg-red-500 border-0 ';
+                return 'bg-yellow-600 border-0 ';
             case 'notInWord':
                 return 'bg-gray-500 border-0';
             case 'unchecked':
