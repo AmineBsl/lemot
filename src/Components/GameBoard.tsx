@@ -8,7 +8,7 @@ const testWord = mots[randomNumber]
 console.log(testWord)
 
 
-function GameBoard() {
+function GameBoard(props: any) {
     const [wordToFind, setWordToFind] = useState(testWord)
     type gameStatusTypes = "ongoing" | "won" | "lost"
     const initialStatus = Array(6).fill('').map(() => Array(6).fill('unchecked'))
@@ -44,6 +44,7 @@ function GameBoard() {
         setCurrentCol(0)
         setCurrentRow(0)
         setGameStatus('ongoing')
+        setWordNotTestable(false)
         const rand = Math.floor(Math.random() * 6232)
         setWordToFind(mots[rand])
     }
@@ -151,12 +152,12 @@ function GameBoard() {
 
 
     return (
-        <div className="focus : outline-none">
-            <div className="flex flex-col items-center w-fit">
+        <div className={props.displayed ? '' : 'hidden'}>
+            <div className="flex flex-col items-center w-[500px] max-w-full">
                 {gameStatus ==="ongoing" && <button className="bg-blue-500 rounded mt-4 px-2" onClick={() => setGameStatus('lost')}>Abandon</button>}
                 {gameStatus !=="ongoing" && <button className="bg-blue-500 rounded mt-4 px-2" onClick={() => startNewGame()}>Nouveau mot</button>}
 
-                {wordNotTestable && <h1 className="pt-4 text-center text-bold text-lg text-white"> Ce mot est top court ou n'est pas dans la liste de mots !</h1>}
+                {wordNotTestable && gameStatus === "ongoing" && <h1 className="pt-4 text-center text-bold text-lg text-white"> Ce mot est top court ou n'est pas dans la liste de mots !</h1>}
                 {gameStatus === "won" && <h1 className="pt-4 text-center text-bold text-lg text-white">Félicitation vous avez trouvé le mot en {currentRow} essais !</h1>}
                 {gameStatus === "lost" && <h1 className="pt-4 text-center text-bold text-lg text-white">Malheuresement c'est perdu le mot était : {wordToFind}</h1>}
                 <LettersBoard lettersBoard={letterBoard} lettersStatus={lettersStatus} />

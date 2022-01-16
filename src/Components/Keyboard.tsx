@@ -33,8 +33,7 @@ function Keyboard(props: any) {
     }
 
     return (
-
-        <div className="w-fit max-w-screen gap-1 grid grid-cols-10 grid-rows-3 mt-8">
+        <div className="w-[500px] max-w-full gap-1 grid grid-cols-10 grid-rows-3 mt-8">
             {keyBoardRow1and2.split('').map((l) => <div key={l} className={`keyLetter ${getBgKey(l)}`} onClick={handleLetterClick}>{l}</div>)}
             <div className="keyLetter bg-slate-900 col-span-2" onClick={handleSubmitClick}>{enterKey}</div>
             {keyBoardRow3.split('').map((l) => <div key={l} className={`keyLetter ${getBgKey(l)}`} onClick={handleLetterClick}>{l}</div>)}
