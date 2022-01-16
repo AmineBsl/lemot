@@ -98,9 +98,9 @@ function GameBoard() {
                     }
                 })
                 setLetterStatus(newLetterStatus)
-            }
-            if (currentRow === 5 && gameStatus === "ongoing") {
-                setGameStatus('lost')
+                if (currentRow === 5 && gameStatus === "ongoing") {
+                    setGameStatus('lost')
+                }
             }
             setCurrentRow(currentRow + 1)
             setCurrentCol(0)
