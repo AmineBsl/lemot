@@ -1,6 +1,5 @@
 
 function Letter(props: any) {
-
     type Status = "correctPlace" | "incorrectPlace" | "notInWord" | "unchecked"
     const letter = props.content
     const letterStatus: Status = props.status
