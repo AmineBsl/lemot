@@ -22,7 +22,6 @@ function Keyboard(props: any) {
     }
 
     function getBgKey(key: string){
-        console.log(notWordLetters)
         if(correctPlaceLetters.includes(key)){
             return 'bg-green-500'
         }else if(incorrectPlaceLetters.includes(key)){
