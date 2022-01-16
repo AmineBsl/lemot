@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header';
 import GameBoard from './Components/GameBoard';
@@ -16,9 +14,6 @@ function App() {
       </div>
     </div>
   );
-  {/* Header*/}
-  {/* Gameboard */}
-  {/* Keyboard */}
 }
 
 export default App;
