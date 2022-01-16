@@ -1,26 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import GameBoard from './Components/GameBoard';
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex justify-center bg-slate-700 h-screen w-screen focus: outline-none'>
+      <div className='h-screen'>
+        <Header />
+        <GameBoard/>
+      </div>
     </div>
   );
+  {/* Header*/}
+  {/* Gameboard */}
+  {/* Keyboard */}
 }
 
 export default App;
