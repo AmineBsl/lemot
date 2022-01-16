@@ -159,7 +159,7 @@ function GameBoard(props: any) {
                 {gameStatus ==="ongoing" && <button className="bg-blue-500 rounded mt-4 px-2" onClick={() => setGameStatus('lost')}>Abandon</button>}
                 {gameStatus !=="ongoing" && <button className="bg-blue-500 rounded mt-4 px-2" onClick={() => startNewGame()}>Nouveau mot</button>}
 
-                {wordNotTestable && gameStatus === "ongoing" && <h1 className="pt-4 text-center text-bold text-lg text-white"> Ce mot est top court ou n'est pas dans la liste de mots !</h1>}
+                {wordNotTestable && gameStatus === "ongoing" && <h1 className="pt-4 text-center text-bold text-lg text-white"> Ce mot est trop court ou n'est pas dans la liste de mots !</h1>}
                 {gameStatus === "won" && <h1 className="pt-4 text-center text-bold text-lg text-white">Félicitation vous avez trouvé le mot en {currentRow} essais !</h1>}
                 {gameStatus === "lost" && <h1 className="pt-4 text-center text-bold text-lg text-white">Malheuresement c'est perdu le mot était : {wordToFind}</h1>}
                 <LettersBoard lettersBoard={letterBoard} lettersStatus={lettersStatus} />
