@@ -7,7 +7,7 @@ const notInWord = 'CLIENT'
 function Rules(props: any) {
     return (
         <div className={`flex flex-col text-center items-center w-[500px] max-w-full text-white ${props.displayed ? '' : 'hidden'}`}>       
-            <p>Lemot est un remake du jeux de lettres Wordle par powerlanguage, basé sur le jeu télévisé Motus.</p>
+            <p>Lemot est un remake du jeux de lettres <a href="https://www.powerlanguage.co.uk/wordle/" className="underline text-blue-200"><i>Wordle</i></a> par powerlanguage, basé sur le jeu télévisé Motus.</p>
             <p className="my-1">Vous avez 6 essais pour essayer de deviner un mot de 6 lettres.</p>
             <p className="my-1">Après chaque essais le jeu vous indique si les lettres sont présentes dans le mot et si elles sont bien placées.</p>
             <p className="my-1">Exemple : </p>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react"
 import LettersBoard from "./LettersBoard";
 import Keyboard from "./Keyboard";
-import mots from "../assets/mots.json"
+import motsJouable from "../assets/motsjouable.json"
+import motsScrabble from "../assets/motduscrabble.json"
 
-const randomNumber = Math.floor(Math.random() * 6232)
-const testWord = mots[randomNumber]
-console.log(testWord)
+const randomNumber = Math.floor(Math.random() * 1532)
+const testWord = motsJouable[randomNumber]
+console.log(motsJouable)
 
 
 function GameBoard(props: any) {
@@ -45,8 +46,8 @@ function GameBoard(props: any) {
         setCurrentRow(0)
         setGameStatus('ongoing')
         setWordNotTestable(false)
-        const rand = Math.floor(Math.random() * 6232)
-        setWordToFind(mots[rand])
+        const rand = Math.floor(Math.random() * 1531)
+        setWordToFind(motsJouable[rand])
     }
 
     const letterChecked: Function = useCallback((letter: string) => {
@@ -85,7 +86,8 @@ function GameBoard(props: any) {
 
     const checkWord: Function = useCallback(() => {
         const word = letterBoard[currentRow]
-        if (currentCol === 6 && mots.includes(word.join('')) && gameStatus === 'ongoing') {
+        if (currentCol === 6 && motsScrabble.includes(word.join('')) && gameStatus === 'ongoing') {
+            console.log(word)
             setWordNotTestable(false)
             let newLetterStatus = [...lettersStatus];
             newLetterStatus[currentRow] = [...newLetterStatus[currentRow]]
